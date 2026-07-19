@@ -10,3 +10,4 @@ plotly
 PyMuPDF
 streamlit-option-menu
 bcrypt
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.1/en_core_web_sm-3.8.1-py3-none-any.whl
