@@ -4,10 +4,22 @@ import pickle
 import pandas as pd
 from pathlib import Path
 import spacy
+from spacy.cli import download
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 import re
 from google import genai
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 client = genai.Client(
-    api_key="GEMINI_API_KEY"
+    api_key=os.getenv("GEMINI_API_KEY")
 )
 # -----------------------------
 # Load Model & Feature Files
